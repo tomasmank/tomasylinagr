@@ -77,7 +77,7 @@ const handleRevealClick = () => {
   };
 const normalizeString = (str:string) => {
   if (!str) return '';
-  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 };
   const handleAnswerSubmit = (e : any) => {
     e.preventDefault();
