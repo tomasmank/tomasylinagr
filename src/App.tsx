@@ -113,8 +113,6 @@ const normalizeString = (str: string) => {
       setIsAnswerCorrect(false);
     }
   };
-
-  const lastAnswerIndex = userResponses.length - 1;
   const isFinalAnswer = currentQuestionIndex >= questions.length -1;
   const isFinalAnswer2 = currentQuestionIndex === questions.length;
 
