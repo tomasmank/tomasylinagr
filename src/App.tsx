@@ -300,7 +300,7 @@ const normalizeString = (str:string) => {
                           className={`quiz-input ${inputColor}`}
                           value={userAnswer}
                           onChange={(e) => {
-                            setUserAnswer(e.target.value);
+                            setUserAnswer(e.target.value.trim());
                             setIsAnswerCorrect(null);
                           }}
                           placeholder="Escribe tu respuesta aquí..."
