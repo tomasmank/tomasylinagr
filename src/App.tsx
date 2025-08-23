@@ -280,23 +280,7 @@ const normalizeString = (str: string) => {
               </AnimatePresence>
 
               <div className="questions-container">
-                {lastAnswerIndex >= 0 && !isFinalAnswer2 && (
-                  <motion.div
-                    key={`response-${lastAnswerIndex}`}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="response-item"
-                  >
-                    <p className="question-text">
-                      {questions[lastAnswerIndex]}
-                    </p>
-                    <p className="response-text">
-                      {userResponses[lastAnswerIndex]}
-                    </p>
-                  </motion.div>
-                )}
-                
+                               
                 <AnimatePresence mode="wait">
                   {currentQuestionIndex < questions.length && (
                     <motion.form
