@@ -17,7 +17,7 @@ const finalName = "Febe";
 // Array con las respuestas correctas (¡cámbialas según tu evento!)
 const correctAnswers = [
   "Retoño",
-  "Ovulación",
+  "Ovulacion",
   "Maternidad",
   "Amamantar",
   "Nacimiento",
@@ -300,7 +300,7 @@ const normalizeString = (str:string) => {
                           className={`quiz-input ${inputColor}`}
                           value={userAnswer}
                           onChange={(e) => {
-                            setUserAnswer(e.target.value.trim());
+                            setUserAnswer(normalizeString(e.target.value));
                             setIsAnswerCorrect(null);
                           }}
                           placeholder="Escribe tu respuesta aquí..."
