@@ -236,7 +236,7 @@ function App() {
               </AnimatePresence>
 
               <div className="questions-container">
-                {lastAnswerIndex >= 0 && (
+                {lastAnswerIndex >= 0 && !isFinalAnswer2 && (
                   <motion.div
                     key={`response-${lastAnswerIndex}`}
                     initial={{ opacity: 0, y: 10 }}
@@ -308,7 +308,7 @@ function App() {
                     className="final-guess-section"
                   >
                     <p className="question-text final-guess-prompt">
-                      Ahora, ¿puedes adivinar el nombre del bebé?
+                      ¡Hemos terminado! Podes buscar el pasaje biblico y descubrir el nombre! ✨
                     </p>
                     <motion.form
                       initial={{ opacity: 0, y: 20 }}
