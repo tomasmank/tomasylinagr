@@ -3,28 +3,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 
 const questions = [
-  "¿Quién creen que se pondrá más nervioso, papá o mamá?",
-  "¿En qué mes nacerá el bebé?",
-  "¿Cuál será el nombre del bebé?",
-  "¿Se parecerá a papá o a mamá?",
-  "¿Pesará más o menos de 3kg?",
-  "¿Cuándo fue la última vez que fueron a la playa?",
-  "¿Qué color de pelo tendrá?",
-  "¿Tendrán una mascota en casa?",
-  "¿Será deportista como sus padres?",
+  "Vástago o tallo que echa de nuevo la planta.",
+  "Porceso en el que un ovario libera un ovulo maduro, preparandose para una posible fecundacion.",
+  "Estado o cualidad de madre.",
+  "Dar de mamar.",
+  "Acto de nacer.",
+  "Profesional que se especializa en la atención de mujeres durante el embarazo y el parto.",
+  "Estado natural y periódico de reposo físico y mental.",
+  "Raiz cuadrada de 256",
+  "Resultado de elevar cualquier numero a 0",
 ];
 const finalName = "Febe";
 // Array con las respuestas correctas (¡cámbialas según tu evento!)
 const correctAnswers = [
-  "papá",
-  "julio",
-  "lucas",
-  "papá",
-  "3kg",
-  "hace 2 meses",
-  "rubio",
-  "no",
-  "sí",
+  "Retoño",
+  "Ovulación",
+  "Maternidad",
+  "Amamantar",
+  "Nacimiento",
+  "Obstetra",
+  "Sueño",
+  "16",
+  "1",
 ];
 
 function App() {
@@ -72,13 +72,16 @@ function App() {
   const handleNo = () => {
     setShowResult('no');
   };
-
+const normalizeString = (str:string) => {
+  if (!str) return '';
+  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+};
   const handleAnswerSubmit = (e : any) => {
     e.preventDefault();
     if (userAnswer.trim() === '') return;
 
     const currentCorrectAnswer = correctAnswers[currentQuestionIndex].toLowerCase();
-    const isCorrect = userAnswer.trim().toLowerCase() === currentCorrectAnswer;
+    const isCorrect = normalizeString(userAnswer) === normalizeString(currentCorrectAnswer);
 
     if (isCorrect) {
       const newResponses = [...userResponses, userAnswer];
