@@ -47,6 +47,15 @@ body, html, #root {
   box-shadow: 0 8px 15px rgba(0,0,0,0.2);
   transition: transform 0.2s ease;
 }
+.video-player {
+  /* Estilos del iframe para que ocupe espacio y se vea bien */
+  max-width: 90vw;
+  max-height: 80vh;
+  aspect-ratio: 16 / 9; /* Mantiene la relación de aspecto 16:9 */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease-in-out;
+}
 
 .start-button:hover {
   transform: scale(1.05);
@@ -59,6 +68,53 @@ body, html, #root {
   align-items: center;
   height: 100vh;
   width: 100vw;
+}
+.reveal-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.reveal-button {
+  background: linear-gradient(135deg, #f06, #93c5fd);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reveal-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-button:active {
+  transform: scale(0.95);
+}
+
+.final-reveal {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem; /* Espacio debajo del texto */
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .question-title {

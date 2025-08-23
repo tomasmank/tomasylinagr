@@ -40,6 +40,7 @@ function App() {
   const [finalGuess, setFinalGuess] = useState('');
   const [finalGuessResult, setFinalGuessResult] = useState<string | null>(null);
   const [showSuccessScreen, setShowSuccessScreen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
   useEffect(() => {
     // Para todas las preguntas excepto la última (índice 8)
     if (currentQuestionIndex < 8) {
@@ -47,7 +48,9 @@ function App() {
       setResponseInitials(initials);
     }
   }, [userResponses, currentQuestionIndex]);
-
+const handleRevealClick = () => {
+    setShowVideo(true);
+};
   useEffect(() => {
     setInputColor(prevColor => (prevColor === 'pink' ? 'blue' : 'pink'));
   }, [currentQuestionIndex]);
@@ -124,6 +127,27 @@ const normalizeString = (str:string) => {
           >
             El nombre es: <span className="final-name">{finalName}</span>
           </motion.p>
+          {!showVideo ? <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="reveal-button"
+                    onClick={handleRevealClick}
+                >
+                    Descubre la razón por la que se llama Febe
+                </motion.button> : <motion.iframe
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="video-player"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/qehwr2MMTqg?si=t6roHVYykKbqtAj8?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+            title="Gender Reveal Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></motion.iframe>}
+          
         </motion.div>):
       !isReady ? (
         <motion.div
