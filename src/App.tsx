@@ -77,14 +77,14 @@ const handleRevealClick = () => {
   };
 const normalizeString = (str:string) => {
   if (!str) return '';
-  return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 };
   const handleAnswerSubmit = (e : any) => {
     e.preventDefault();
     if (userAnswer.trim() === '') return;
 
     const currentCorrectAnswer = correctAnswers[currentQuestionIndex].toLowerCase();
-    const isCorrect = normalizeString(userAnswer) === normalizeString(currentCorrectAnswer);
+    const isCorrect = normalizeString(userAnswer.toLowerCase()) === normalizeString(currentCorrectAnswer.toLowerCase());
 
     if (isCorrect) {
       const newResponses = [...userResponses, userAnswer];
