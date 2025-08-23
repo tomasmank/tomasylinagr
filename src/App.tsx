@@ -75,9 +75,26 @@ const handleRevealClick = () => {
   const handleNo = () => {
     setShowResult('no');
   };
-const normalizeString = (str:string) => {
+const normalizeString = (str: string) => {
   if (!str) return '';
-  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+  // This regular expression targets and removes only the most common Spanish diacritical marks
+  return str.replace(/[áÁéÉíÍóÓúÚüÜ]/g, (char) => {
+    switch (char) {
+      case 'á': return 'a';
+      case 'Á': return 'A';
+      case 'é': return 'e';
+      case 'É': return 'E';
+      case 'í': return 'i';
+      case 'Í': return 'I';
+      case 'ó': return 'o';
+      case 'Ó': return 'O';
+      case 'ú': return 'u';
+      case 'Ú': return 'U';
+      case 'ü': return 'u';
+      case 'Ü': return 'U';
+      default: return char;
+    }
+  }).trim();
 };
   const handleAnswerSubmit = (e : any) => {
     e.preventDefault();
