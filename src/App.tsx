@@ -306,7 +306,7 @@ const normalizeString = (str: string) => {
                           placeholder="Escribe tu respuesta aquí..."
                           autoFocus
                         />
-                        <button type="submit" className="quiz-button">
+                        <button type="submit" className={`quiz-button ${inputColor}`}>
                           Responder
                         </button>
                       </div>
