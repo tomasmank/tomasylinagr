@@ -5,14 +5,15 @@ import "./App.css";
 const questions = [
   "Vástago o tallo que vuelve a brotar en la planta.",
   "Proceso mediante el cual un ovario libera un óvulo maduro, preparándose para una posible fecundación.",
-  "Cualidad o condición de ser madre.",
-  "Acción de amamantar.",
-  "Hecho de nacer.",
+  "Estado, cualidad o condición de ser madre.",
+  "Dar de mamar.",
+  "Acto de nacer.",
   "Profesional especializado en la atención de mujeres durante el embarazo y el parto.",
   "Estado natural y periódico de reposo físico y mental.",
   "Raíz cuadrada de 256.",
-  "Resultado de elevar cualquier número a la potencia de 0.",
+  "Resultado de elevar cualquier número a la potencia 0.",
 ];
+
 
 const finalName = "Febe";
 // Array con las respuestas correctas (¡cámbialas según tu evento!)
