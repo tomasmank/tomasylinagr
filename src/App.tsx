@@ -156,7 +156,7 @@ const normalizeString = (str: string) => {
             className="video-player"
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/qehwr2MMTqg?si=t6roHVYykKbqtAj8?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
+            src="https://www.youtube.com/embed/dZcjxPbTj40?si=t6roHVYykKbqtAj8?autoplay=1&controls=0&modestbranding=1&rel=0&showinfo=0"
             title="Gender Reveal Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
