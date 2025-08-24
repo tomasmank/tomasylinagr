@@ -3,16 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./App.css";
 
 const questions = [
-  "Vástago o tallo que echa de nuevo la planta.",
-  "Porceso en el que un ovario libera un ovulo maduro, preparandose para una posible fecundacion.",
-  "Estado o cualidad de madre.",
-  "Dar de mamar.",
-  "Acto de nacer.",
-  "Profesional que se especializa en la atención de mujeres durante el embarazo y el parto.",
+  "Vástago o tallo que vuelve a brotar en la planta.",
+  "Proceso mediante el cual un ovario libera un óvulo maduro, preparándose para una posible fecundación.",
+  "Cualidad o condición de ser madre.",
+  "Acción de amamantar.",
+  "Hecho de nacer.",
+  "Profesional especializado en la atención de mujeres durante el embarazo y el parto.",
   "Estado natural y periódico de reposo físico y mental.",
-  "Raiz cuadrada de 256",
-  "Resultado de elevar cualquier numero a 0",
+  "Raíz cuadrada de 256.",
+  "Resultado de elevar cualquier número a la potencia de 0.",
 ];
+
 const finalName = "Febe";
 // Array con las respuestas correctas (¡cámbialas según tu evento!)
 const correctAnswers = [
